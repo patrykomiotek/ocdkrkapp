@@ -6,7 +6,7 @@ const meta = {
   title: "Components/Generator",
   component: Generator,
   // tags: ["autodocs"],
-} satisfies Meta<typeof Text>;
+} satisfies Meta<typeof Generator>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
