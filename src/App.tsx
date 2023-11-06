@@ -1,4 +1,5 @@
 import "./App.css";
+import { Generator } from "./components/Generator";
 
 import { Text, Button } from "./ui";
 // import { Text } from "./ui/Text/Text";
@@ -11,6 +12,7 @@ function App() {
         Hello world!
       </h1> */}
       <div>
+        <Generator />
         <Text>Today is payday</Text>
         <Button label="Click me" type="submit" />
         <Button label="Click me" bgColor="carrot" color="emerald" />
