@@ -1,5 +1,6 @@
 import "./App.css";
-import { Text } from "./ui";
+
+import { Text, Button } from "./ui";
 // import { Text } from "./ui/Text/Text";
 // import { Text as Kaczka } from "./ui/Text/Text";
 
@@ -11,6 +12,8 @@ function App() {
       </h1> */}
       <div>
         <Text>Today is payday</Text>
+        <Button label="Click me" type="submit" />
+        <Button label="Click me" bgColor="carrot" color="emerald" />
       </div>
     </>
   );

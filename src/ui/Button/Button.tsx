@@ -15,8 +15,9 @@ type Props = Readonly<{
   label: string;
   color?: Color;
   bgColor?: Color;
-  type: ComponentProps<"button">["type"];
-}>;
+  // type: ComponentProps<"button">["type"];
+}> &
+  ComponentProps<"button">;
 
 // emerald: '#2ecc71',
 // carrot: '#e67e22',
@@ -26,9 +27,9 @@ type Props = Readonly<{
 
 export const Button = ({
   label,
-  type,
   color = "clouds",
   bgColor = "midnight-blue",
+  ...rest
 }: Props) => {
   // const myColor = props.color ? props.color : "#fff";
   // const myColor = props.color ?? '#fff';
@@ -41,7 +42,7 @@ export const Button = ({
     backgroundColor: colors[bgColor],
   };
   return (
-    <button type={type} style={styles}>
+    <button {...rest} style={styles}>
       {label}
     </button>
   );
