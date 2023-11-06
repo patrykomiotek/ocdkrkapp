@@ -1,6 +1,7 @@
 import {
   ChangeEvent,
   ChangeEventHandler,
+  FormEventHandler,
   MouseEventHandler,
   useState,
 } from "react";
@@ -33,10 +34,15 @@ export const RegistrationFormState = () => {
     });
   };
 
+  const handleSubmit: FormEventHandler = (event) => {
+    event.preventDefault();
+    console.log(state);
+  };
+
   // const handleClick: MouseEventHandler<HTMLDivElement> = (event) => {};
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <div>
         E-mail: {state.email}, password: {state.password}
       </div>
