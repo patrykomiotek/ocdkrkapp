@@ -18,7 +18,7 @@ export const RegistrationFormState = () => {
   // const [password, setPassword] = useState<string>("");
   // const [language, setLanguage] = useState<string>("");
   const [state, setState] = useState<FormValues>({
-    email: "",
+    email: "jan@kowalski.pl",
     password: "",
     language: "",
   });
@@ -48,15 +48,30 @@ export const RegistrationFormState = () => {
       </div>
       <div>
         <label htmlFor="email">E-mail</label>
-        <input id="email" type="email" onChange={handleChange} />
+        <input
+          id="email"
+          type="email"
+          onChange={handleChange}
+          value={state.email}
+        />
       </div>
       <div>
         <label htmlFor="password">Password</label>
-        <input id="password" type="password" onChange={handleChange} />
+        <input
+          id="password"
+          type="password"
+          onChange={handleChange}
+          value={state.password}
+        />
       </div>
       <div>
         <label htmlFor="language">Language</label>
-        <input id="language" type="text" onChange={handleChange} />
+        <input
+          id="language"
+          type="text"
+          onChange={handleChange}
+          value={state.language}
+        />
       </div>
       <Button type="submit" label="Send" />
     </form>

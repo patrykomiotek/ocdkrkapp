@@ -5,6 +5,10 @@
   text-align: center;
 }
 
+.invalid {
+  border: #f00 2px solid;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
