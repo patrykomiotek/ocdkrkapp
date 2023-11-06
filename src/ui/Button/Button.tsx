@@ -1,4 +1,5 @@
 // type Color = "emerald" | "carrot";
+import { ComponentProps } from "react";
 
 const colors = {
   emerald: "#2ecc71",
@@ -14,6 +15,7 @@ type Props = Readonly<{
   label: string;
   color?: Color;
   bgColor?: Color;
+  type: ComponentProps<"button">["type"];
 }>;
 
 // emerald: '#2ecc71',
@@ -24,6 +26,7 @@ type Props = Readonly<{
 
 export const Button = ({
   label,
+  type,
   color = "clouds",
   bgColor = "midnight-blue",
 }: Props) => {
@@ -37,11 +40,15 @@ export const Button = ({
     color: colors[color],
     backgroundColor: colors[bgColor],
   };
-  return <button style={styles}>{label}</button>;
+  return (
+    <button type={type} style={styles}>
+      {label}
+    </button>
+  );
 };
 
 /**
  * <Button label="Click me" />
- * <Button label="Click me" color="clouds" />
+ * <Button label="Click me" color="clouds" type="submit" />
  * <Button label="Click me" color="clouds" bgColor="midnight-blue" />
  */
