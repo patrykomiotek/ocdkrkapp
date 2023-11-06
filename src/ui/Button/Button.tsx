@@ -10,11 +10,11 @@ const colors = {
 
 type Color = keyof typeof colors;
 
-type Props = {
+type Props = Readonly<{
   label: string;
   color?: Color;
   bgColor?: Color;
-};
+}>;
 
 // emerald: '#2ecc71',
 // carrot: '#e67e22',
@@ -24,9 +24,15 @@ type Props = {
 
 export const Button = ({
   label,
-  color = "midnight-blue",
-  bgColor = "clouds",
+  color = "clouds",
+  bgColor = "midnight-blue",
 }: Props) => {
+  // const myColor = props.color ? props.color : "#fff";
+  // const myColor = props.color ?? '#fff';
+  // const myColor = props.color || '#fff';
+
+  // color = "carrot";
+
   const styles = {
     color: colors[color],
     backgroundColor: colors[bgColor],
