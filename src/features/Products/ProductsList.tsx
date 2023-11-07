@@ -1,8 +1,11 @@
 import { useApi } from "../../hooks/useApi";
-import { ProductResponse } from "./types/ProductReponse";
+import { fetchProducts } from "./service/products";
+import { ProductResponse } from "./types/ProductResponse";
 
 export const ProductsList = () => {
+  // const { data, isLoading, isError } = useQuery<ProductResponse>(`/products`);
   const { data, isLoading, isError } = useApi<ProductResponse>(`/products`);
+  // const { data, isLoading, isError } = useApi<ProductResponse>(fetchProducts);
 
   if (isLoading) {
     return <p>Loading....</p>;
@@ -22,6 +25,7 @@ export const ProductsList = () => {
           <li key={elem.id}>{elem.fields.name}</li>
         ))}
       </ul>
+      {/* <button onClick={() => fetchProducts()}>Revalidate</button> */}
     </div>
   );
 };

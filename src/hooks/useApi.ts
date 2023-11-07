@@ -25,6 +25,8 @@ type ResponseState<T> =
     };
 
 // useState<number>(0), useRef<HTMLInputElement>(null)
+// eslint-disable-next-line @typescript-eslint/ban-types
+// export const useApi = <T>(source: string | Function) => {
 export const useApi = <T>(source: string) => {
   const [state, setState] = useState<ResponseState<T>>({
     data: undefined,
@@ -35,6 +37,12 @@ export const useApi = <T>(source: string) => {
   useEffect(() => {
     const loadData = async () => {
       try {
+        // if (typeof source === "string") {
+        //   //
+        // } else {
+        //   await axios.get<T>(source);
+        // }
+
         const response = await fetch(`${API_BASE_URL}${source}`, {
           headers: {
             Authorization: `Bearer ${TOKEN}`,

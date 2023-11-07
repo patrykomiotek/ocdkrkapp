@@ -1,5 +1,5 @@
 import { useApi } from "../../hooks/useApi";
-import { ProductDto } from "../../types/ProductDto";
+import { ProductDto } from "./types/ProductDto";
 
 type Props = {
   id: string;
