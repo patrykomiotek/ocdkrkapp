@@ -7,6 +7,8 @@ import { RegistrationFormState } from "./components/RegistrationFormState";
 
 import { Text, Button, MagicButton } from "./ui";
 import { RegistrationPage } from "./pages/RegistrationPage";
+import { AuthInfo } from "./components/AuthContext/AuthInfo";
+import { AuthContext } from "./components/AuthContext/AuthContext";
 // import { Text } from "./ui/Text/Text";
 // import { Text as Kaczka } from "./ui/Text/Text";
 
@@ -33,11 +35,12 @@ function App() {
 
   return (
     <>
-      {/* <h1 className="text-3xl font-bold underline">
-        Hello world!
-      </h1> */}
       <div>
-        <RegistrationPage />
+        <AuthContext.Provider value={{ isLoggedIn: false }}>
+          <AuthInfo />
+        </AuthContext.Provider>
+
+        {/* <RegistrationPage /> */}
 
         {/* <MagicButton
           ref={buttonRef}

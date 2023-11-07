@@ -5,7 +5,7 @@ export const AuthCredentials = () => {
   return (
     <div>
       <h3>AuthCredentials</h3>
-      <p>User is {context.isLoggedIn ? "YES" : "NO"}</p>
+      <p>Is user logged? {context.isLoggedIn ? "YES" : "NO"}</p>
     </div>
   );
 };
