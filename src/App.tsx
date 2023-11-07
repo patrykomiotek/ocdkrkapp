@@ -8,12 +8,14 @@ import { RegistrationFormState } from "./components/RegistrationFormState";
 import { Text, Button, MagicButton } from "./ui";
 import { RegistrationPage } from "./pages/RegistrationPage";
 import { AuthInfo } from "./components/AuthContext/AuthInfo";
-import { AuthContext } from "./components/AuthContext/AuthContext";
+import {
+  AuthContext,
+  AuthProvider,
+} from "./components/AuthContext/AuthContext";
 // import { Text } from "./ui/Text/Text";
 // import { Text as Kaczka } from "./ui/Text/Text";
 
 function App() {
-  const [isLoggedIn, setLoggedIn] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
@@ -37,11 +39,9 @@ function App() {
   return (
     <>
       <div>
-        <AuthContext.Provider
-          value={{ isLoggedIn: isLoggedIn, toggleLoggedIn: setLoggedIn }}
-        >
+        <AuthProvider>
           <AuthInfo />
-        </AuthContext.Provider>
+        </AuthProvider>
 
         {/* <RegistrationPage /> */}
 
