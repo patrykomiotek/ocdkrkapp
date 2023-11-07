@@ -1,6 +1,7 @@
 import "./App.css";
 import { Generator } from "./components/Generator";
 import { RegistrationFormRefs } from "./components/RegistrationFormRefs/RegistrationFormRefs";
+import { RegistrationFormRefsCustomInput } from "./components/RegistrationFormRefsCustomInput";
 import { RegistrationFormState } from "./components/RegistrationFormState";
 
 import { Text, Button } from "./ui";
@@ -14,7 +15,8 @@ function App() {
         Hello world!
       </h1> */}
       <div>
-        <RegistrationFormRefs />
+        <RegistrationFormRefsCustomInput />
+        {/* <RegistrationFormRefs /> */}
         {/* <RegistrationFormState /> */}
         <Generator />
         <Text>Today is payday</Text>
