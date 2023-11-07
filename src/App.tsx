@@ -43,6 +43,8 @@ function App() {
           <AuthInfo />
         </AuthProvider>
 
+        {/* <AuthInfo /> */}
+
         {/* <RegistrationPage /> */}
 
         {/* <MagicButton
