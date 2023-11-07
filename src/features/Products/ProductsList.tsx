@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useApi } from "../../hooks/useApi";
 import { fetchProducts } from "./service/products";
 import { ProductResponse } from "./types/ProductResponse";
@@ -22,7 +23,10 @@ export const ProductsList = () => {
       <h2>Products</h2>
       <ul>
         {products.map((elem) => (
-          <li key={elem.id}>{elem.fields.name}</li>
+          <li key={elem.id}>
+            <Link to={`/product/${elem.id}`}>{elem.fields.name}</Link>
+            {/* <a href=""></a> */}
+          </li>
         ))}
       </ul>
       {/* <button onClick={() => fetchProducts()}>Revalidate</button> */}

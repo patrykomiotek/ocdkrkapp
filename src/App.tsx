@@ -18,6 +18,14 @@ import { ErrorBoundary } from "./components/ErrorBoundary";
 import { ProductsList } from "./features/Products";
 // import { Text } from "./ui/Text/Text";
 // import { Text as Kaczka } from "./ui/Text/Text";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Route,
+  Link,
+} from "react-router-dom";
+import { Product } from "./features/Products/Product";
+import { ProductPage } from "./pages/Product";
 
 function App() {
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -40,11 +48,22 @@ function App() {
     }
   };
 
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <ProductsList />,
+    },
+    {
+      path: "/product/:id",
+      element: <ProductPage />,
+    },
+  ]);
+
   return (
     <>
       <div>
         <ErrorBoundary fallback={<p>Oh no error!</p>}>
-          <ProductsList />
+          <RouterProvider router={router} />
           {/* <ThemeProvider>
             <AuthProvider>
               <AuthInfo />
