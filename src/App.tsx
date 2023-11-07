@@ -15,6 +15,7 @@ import {
 import { ThemeProvider } from "./components/Theme/ThemeContext";
 import { ThemeSwitcher } from "./components/Theme/ThemeSwitcher";
 import { ErrorBoundary } from "./components/ErrorBoundary";
+import { ProductsList } from "./features/Products";
 // import { Text } from "./ui/Text/Text";
 // import { Text as Kaczka } from "./ui/Text/Text";
 
@@ -43,12 +44,13 @@ function App() {
     <>
       <div>
         <ErrorBoundary fallback={<p>Oh no error!</p>}>
-          <ThemeProvider>
+          <ProductsList />
+          {/* <ThemeProvider>
             <AuthProvider>
               <AuthInfo />
             </AuthProvider>
             <ThemeSwitcher />
-          </ThemeProvider>
+          </ThemeProvider> */}
 
           {/* <AuthInfo /> */}
 
