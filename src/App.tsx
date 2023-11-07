@@ -50,7 +50,7 @@ function App() {
             <ThemeSwitcher />
           </ThemeProvider>
 
-          <AuthInfo />
+          {/* <AuthInfo /> */}
 
           {/* <RegistrationPage /> */}
 
