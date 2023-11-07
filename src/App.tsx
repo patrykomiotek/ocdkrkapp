@@ -1,4 +1,4 @@
-import { MouseEventHandler, useEffect, useRef } from "react";
+import { MouseEventHandler, useEffect, useRef, useState } from "react";
 import "./App.css";
 import { Generator } from "./components/Generator";
 import { RegistrationFormRefs } from "./components/RegistrationFormRefs/RegistrationFormRefs";
@@ -13,6 +13,7 @@ import { AuthContext } from "./components/AuthContext/AuthContext";
 // import { Text as Kaczka } from "./ui/Text/Text";
 
 function App() {
+  const [isLoggedIn, setLoggedIn] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
@@ -36,7 +37,9 @@ function App() {
   return (
     <>
       <div>
-        <AuthContext.Provider value={{ isLoggedIn: false }}>
+        <AuthContext.Provider
+          value={{ isLoggedIn: isLoggedIn, toggleLoggedIn: setLoggedIn }}
+        >
           <AuthInfo />
         </AuthContext.Provider>
 
