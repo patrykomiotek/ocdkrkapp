@@ -12,6 +12,8 @@ import {
   AuthContext,
   AuthProvider,
 } from "./components/AuthContext/AuthContext";
+import { ThemeProvider } from "./components/Theme/ThemeContext";
+import { ThemeSwitcher } from "./components/Theme/ThemeSwitcher";
 // import { Text } from "./ui/Text/Text";
 // import { Text as Kaczka } from "./ui/Text/Text";
 
@@ -39,9 +41,12 @@ function App() {
   return (
     <>
       <div>
-        <AuthProvider>
-          <AuthInfo />
-        </AuthProvider>
+        <ThemeProvider>
+          <AuthProvider>
+            <AuthInfo />
+          </AuthProvider>
+          <ThemeSwitcher />
+        </ThemeProvider>
 
         {/* <AuthInfo /> */}
 
