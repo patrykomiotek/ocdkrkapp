@@ -14,6 +14,7 @@ import {
 } from "./components/AuthContext/AuthContext";
 import { ThemeProvider } from "./components/Theme/ThemeContext";
 import { ThemeSwitcher } from "./components/Theme/ThemeSwitcher";
+import { ErrorBoundary } from "./components/ErrorBoundary";
 // import { Text } from "./ui/Text/Text";
 // import { Text as Kaczka } from "./ui/Text/Text";
 
@@ -41,30 +42,32 @@ function App() {
   return (
     <>
       <div>
-        <ThemeProvider>
-          <AuthProvider>
-            <AuthInfo />
-          </AuthProvider>
-          <ThemeSwitcher />
-        </ThemeProvider>
+        <ErrorBoundary fallback={<p>Oh no error!</p>}>
+          <ThemeProvider>
+            <AuthProvider>
+              <AuthInfo />
+            </AuthProvider>
+            <ThemeSwitcher />
+          </ThemeProvider>
 
-        {/* <AuthInfo /> */}
+          <AuthInfo />
 
-        {/* <RegistrationPage /> */}
+          {/* <RegistrationPage /> */}
 
-        {/* <MagicButton
+          {/* <MagicButton
           ref={buttonRef}
           label="Click me"
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         /> */}
 
-        {/* <RegistrationFormRefsCustomInput /> */}
-        {/* <RegistrationFormRefs /> */}
-        {/* <RegistrationFormState /> */}
-        {/* <Generator /> */}
-        {/* <Button label="Click me" type="submit" /> */}
-        {/* <Button label="Click me" bgColor="carrot" color="emerald" /> */}
+          {/* <RegistrationFormRefsCustomInput /> */}
+          {/* <RegistrationFormRefs /> */}
+          {/* <RegistrationFormState /> */}
+          {/* <Generator /> */}
+          {/* <Button label="Click me" type="submit" /> */}
+          {/* <Button label="Click me" bgColor="carrot" color="emerald" /> */}
+        </ErrorBoundary>
       </div>
     </>
   );
