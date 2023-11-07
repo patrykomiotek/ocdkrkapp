@@ -18,6 +18,7 @@ export const Generator = () => {
   return (
     <div>
       <Text>UUID: {id}</Text>
+      <Text>Today is payday</Text>
       <Button label="Refresh" onClick={handleClick} />
     </div>
   );

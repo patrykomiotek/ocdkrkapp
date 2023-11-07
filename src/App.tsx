@@ -42,11 +42,11 @@ function App() {
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         />
+
         {/* <RegistrationFormRefsCustomInput /> */}
         {/* <RegistrationFormRefs /> */}
         {/* <RegistrationFormState /> */}
-        {/* <Generator /> */}
-        {/* <Text>Today is payday</Text> */}
+        <Generator />
         {/* <Button label="Click me" type="submit" /> */}
         {/* <Button label="Click me" bgColor="carrot" color="emerald" /> */}
       </div>
