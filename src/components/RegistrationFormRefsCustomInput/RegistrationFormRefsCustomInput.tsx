@@ -1,7 +1,16 @@
 import { ChangeEventHandler, FormEventHandler, useRef, useEffect } from "react";
 import { Button, Input } from "../../ui";
+import { RegistrationFormData } from "../../pages/RegistrationPage";
 
-export const RegistrationFormRefsCustomInput = () => {
+type Props = {
+  onSubmit: (data: RegistrationFormData) => void;
+  values?: RegistrationFormData;
+};
+
+export const RegistrationFormRefsCustomInput = ({
+  values,
+  onSubmit,
+}: Props) => {
   const emailFiledRef = useRef<HTMLInputElement>(null);
   const passwordFiledRef = useRef<HTMLInputElement>(null);
   const languageFiledRef = useRef<HTMLInputElement>(null);
@@ -13,10 +22,10 @@ export const RegistrationFormRefsCustomInput = () => {
 
   const handleSubmit: FormEventHandler = (event) => {
     event.preventDefault();
-    console.log({
-      email: emailFiledRef.current?.value,
-      password: passwordFiledRef.current?.value,
-      language: languageFiledRef.current?.value,
+    onSubmit({
+      email: emailFiledRef.current?.value || "",
+      password: passwordFiledRef.current?.value || "",
+      language: languageFiledRef.current?.value || "",
     });
     // console.log(state);
   };
@@ -49,10 +58,19 @@ export const RegistrationFormRefsCustomInput = () => {
         ref={emailFiledRef}
         label="E-mail"
         type="email"
-        defaultValue="jan@kowalski.pl"
+        defaultValue={values?.email}
       />
-      <Input ref={passwordFiledRef} label="Password" type="password" />
-      <Input ref={languageFiledRef} label="Language" />
+      <Input
+        ref={passwordFiledRef}
+        label="Password"
+        type="password"
+        defaultValue={values?.password}
+      />
+      <Input
+        ref={languageFiledRef}
+        label="Language"
+        defaultValue={values?.language}
+      />
 
       <Button type="submit" label="Send" />
     </form>

@@ -6,6 +6,7 @@ import { RegistrationFormRefsCustomInput } from "./components/RegistrationFormRe
 import { RegistrationFormState } from "./components/RegistrationFormState";
 
 import { Text, Button, MagicButton } from "./ui";
+import { RegistrationPage } from "./pages/RegistrationPage";
 // import { Text } from "./ui/Text/Text";
 // import { Text as Kaczka } from "./ui/Text/Text";
 
@@ -36,17 +37,19 @@ function App() {
         Hello world!
       </h1> */}
       <div>
-        <MagicButton
+        <RegistrationPage />
+
+        {/* <MagicButton
           ref={buttonRef}
           label="Click me"
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
-        />
+        /> */}
 
         {/* <RegistrationFormRefsCustomInput /> */}
         {/* <RegistrationFormRefs /> */}
         {/* <RegistrationFormState /> */}
-        <Generator />
+        {/* <Generator /> */}
         {/* <Button label="Click me" type="submit" /> */}
         {/* <Button label="Click me" bgColor="carrot" color="emerald" /> */}
       </div>
