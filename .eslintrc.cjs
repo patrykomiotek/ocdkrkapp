@@ -33,6 +33,7 @@ module.exports = {
   ignorePatterns: [
     "jest.config.ts",
     ".eslintrc.cjs",
+    "postcss.config.js",
     "src/test/__mocks__/fileMock.js",
   ],
 };
