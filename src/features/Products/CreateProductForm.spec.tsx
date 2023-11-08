@@ -12,7 +12,9 @@ describe("CreateProductForm", () => {
     // });
 
     // expect(screen.getByText(/name is required/i)).toBeInTheDocument();
-    expect(await screen.findByText(/name is required/i)).toBeInTheDocument();
+    const validationError = await screen.findByText(/name is required/i);
+    // expect(await screen.findByText(/name is required/i)).toBeInTheDocument();
+    expect(validationError).toBeInTheDocument();
 
     debug();
   });
