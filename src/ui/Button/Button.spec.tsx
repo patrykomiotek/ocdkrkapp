@@ -11,7 +11,7 @@ describe("Button component", () => {
     fireEvent.click(button);
 
     // debug();
-    // expect(screen.getByText("Click me")).toBeInTheDocument();
+    expect(screen.getByText("Click me")).toBeInTheDocument();
   });
   it("should have no violations", async () => {
     const { container } = render(<Button label="Click me" />);
