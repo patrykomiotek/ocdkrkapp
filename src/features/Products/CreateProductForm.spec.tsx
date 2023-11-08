@@ -8,6 +8,7 @@ describe("CreateProductForm", () => {
 
     // act(() => {
     fireEvent.click(screen.getByRole("button", { name: /submit/i })); // label
+    // expect(handleSubmit).toHaveBeenCalled();
     // await userEvent.click(screen.getByRole("button", { name: /submit/i }))
     // });
 
