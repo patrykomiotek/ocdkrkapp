@@ -6,5 +6,7 @@ export const validationSchema = z.object({
   price: z.number().positive({ message: "Price must be be positive 😄" }),
 });
 
+// validationSchema.parse()
+
 // type Validation = typeof validationSchema;
 export type CreateProductDto = z.infer<typeof validationSchema>;
