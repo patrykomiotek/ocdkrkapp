@@ -11,10 +11,13 @@ type Props = {
 export const Product = ({ id }: Props) => {
   const { data, isLoading, isError } = useApi<ProductDto>(`/products/${id}`);
 
+  console.log("data: ", data);
+
   if (data) {
     try {
       validationSchema.parse(data.fields);
     } catch (e) {
+      console.log(e);
       if (e instanceof ZodError) {
         console.error("zod error");
       }

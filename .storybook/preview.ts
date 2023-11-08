@@ -1,13 +1,16 @@
-import type { Preview } from '@storybook/react';
-
-import { withThemeByClassName } from '@storybook/addon-styling';
+import type { Preview } from "@storybook/react";
+import { initialize, mswLoader } from "msw-storybook-addon";
+import { withThemeByClassName } from "@storybook/addon-styling";
 
 /* TODO: update import to your tailwind styles file. If you're using Angular, inject this through your angular.json config instead */
-import '../src/index.css';
+import "../src/index.css";
+
+// Initialize MSW
+initialize();
 
 const preview: Preview = {
   parameters: {
-    actions: { argTypesRegex: '^on[A-Z].*' },
+    actions: { argTypesRegex: "^on[A-Z].*" },
     controls: {
       matchers: {
         color: /(background|color)$/i,
@@ -16,8 +19,8 @@ const preview: Preview = {
     },
     options: {
       storySort: {
-        order: ['Atoms', 'Molecules', 'Organisms'],
-        method: 'numeric',
+        order: ["Atoms", "Molecules", "Organisms"],
+        method: "numeric",
       },
     },
   },
@@ -27,12 +30,15 @@ const preview: Preview = {
     // NOTE: requires setting "darkMode" to "class" in your tailwind config
     withThemeByClassName({
       themes: {
-        light: 'light',
-        dark: 'dark',
+        light: "light",
+        dark: "dark",
       },
-      defaultTheme: 'light',
+      defaultTheme: "light",
     }),
   ],
+
+  // Provide the MSW addon loader globally
+  loaders: [mswLoader],
 };
 
 export default preview;
