@@ -21,6 +21,8 @@ export const Product = ({ id }: Props) => {
     <div>
       <h2>Products</h2>
       <p>Name: {data.fields.name}</p>
+      <p>Description: {data.fields.description}</p>
+      <p>Price: ${data.fields.price}</p>
     </div>
   );
 };
