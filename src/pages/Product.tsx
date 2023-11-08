@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
 import { Product } from "../features/Products/Product";
+import { ROUTE } from "../routes";
 
 export const ProductPage = () => {
   const { id } = useParams();
@@ -10,7 +11,7 @@ export const ProductPage = () => {
     return (
       <>
         <Helmet>
-          <title>Product {id}</title>
+          <title>{ROUTE.PRODUCT.title}</title>
         </Helmet>
         <Product id={id} />
       </>

@@ -29,7 +29,8 @@ import {
 import { Product } from "./features/Products/Product";
 import { ProductPage } from "./pages/Product";
 import { PrivateRoute } from "./components/PrivateRoute";
-import { Layout } from "./components/Loayout";
+import { Layout } from "./components/Layout";
+import { ROUTE } from "./routes";
 
 function App() {
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -54,11 +55,11 @@ function App() {
 
   const router = createBrowserRouter([
     {
-      path: "/",
+      path: ROUTE.ROOT.path,
       element: <Layout />,
       children: [
         {
-          path: "/",
+          path: ROUTE.ROOT.path,
           element: (
             <PrivateRoute>
               <ProductsList />
@@ -66,7 +67,7 @@ function App() {
           ),
         },
         {
-          path: "/product/:id",
+          path: ROUTE.PRODUCT.path,
           element: <ProductPage />,
         },
       ],
@@ -87,9 +88,9 @@ function App() {
             <ThemeProvider>
               <AuthProvider>
                 <RouterProvider router={router} />
-                <AuthInfo />
+                {/* <AuthInfo /> */}
               </AuthProvider>
-              <ThemeSwitcher />
+              {/* <ThemeSwitcher /> */}
             </ThemeProvider>
 
             {/* <AuthInfo /> */}

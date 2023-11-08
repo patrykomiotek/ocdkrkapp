@@ -3,6 +3,7 @@ import { useApi } from "../../hooks/useApi";
 import { fetchProducts } from "./service/products";
 import { ProductResponse } from "./types/ProductResponse";
 import { Helmet } from "react-helmet-async";
+import { ROUTE } from "../../routes";
 
 export const ProductsList = () => {
   // const { data, isLoading, isError } = useQuery<ProductResponse>(`/products`);
@@ -27,7 +28,9 @@ export const ProductsList = () => {
         <ul>
           {products.map((elem) => (
             <li key={elem.id}>
-              <Link to={`/product/${elem.id}`}>{elem.fields.name}</Link>
+              <Link to={ROUTE.PRODUCT.dynamicPath(elem.id)}>
+                {elem.fields.name}
+              </Link>
               {/* <a href=""></a> */}
             </li>
           ))}
