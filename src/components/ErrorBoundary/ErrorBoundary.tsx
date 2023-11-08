@@ -14,11 +14,11 @@ export class ErrorBoundary extends Component<Props, State> {
     hasError: false,
   };
 
-  static getDerivedStateFromError(error: Error) {
+  static getDerivedStateFromError(_error: Error) {
     return { hasError: true };
   }
 
-  componentDidCatch(error: Error, errorInfo: ErrorInfo): void {
+  componentDidCatch(_error: Error, _errorInfo: ErrorInfo): void {
     // logger
   }
 
