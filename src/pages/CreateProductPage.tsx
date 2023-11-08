@@ -1,8 +1,13 @@
 import { Helmet } from "react-helmet-async";
 import { ROUTE } from "../routes";
 import { CreateProductForm } from "../features/Products/CreateProductForm";
+import { CreateProductDto } from "../features/Products/types/CreateProductDto";
 
 export const CreateProductPage = () => {
+  const handleSubmit = (data: CreateProductDto) => {
+    console.log("inside page: ", data);
+  };
+
   return (
     <>
       <Helmet>
@@ -10,7 +15,7 @@ export const CreateProductPage = () => {
       </Helmet>
       <div>
         <h1>Create product</h1>
-        <CreateProductForm />
+        <CreateProductForm onSubmit={handleSubmit} />
       </div>
     </>
   );

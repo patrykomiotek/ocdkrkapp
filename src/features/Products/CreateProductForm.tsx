@@ -1,13 +1,12 @@
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Button, Input } from "../../ui";
+import { CreateProductDto } from "./types/CreateProductDto";
 
-interface CreateProductDto {
-  name: string;
-  description: string;
-  price: number;
-}
+type Props = {
+  onSubmit: (data: CreateProductDto) => void;
+};
 
-export const CreateProductForm = () => {
+export const CreateProductForm = ({ onSubmit }: Props) => {
   const {
     register,
     handleSubmit,
@@ -16,6 +15,7 @@ export const CreateProductForm = () => {
 
   const createProduct: SubmitHandler<CreateProductDto> = (data) => {
     console.log(data);
+    onSubmit(data);
   };
 
   return (
