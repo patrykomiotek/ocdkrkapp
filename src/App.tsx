@@ -26,6 +26,8 @@ import {
 } from "react-router-dom";
 import { Product } from "./features/Products/Product";
 import { ProductPage } from "./pages/Product";
+import { PrivateRoute } from "./components/PrivateRoute";
+import { Layout } from "./components/Loayout";
 
 function App() {
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -51,11 +53,21 @@ function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <ProductsList />,
-    },
-    {
-      path: "/product/:id",
-      element: <ProductPage />,
+      element: <Layout />,
+      children: [
+        {
+          path: "/",
+          element: (
+            <PrivateRoute>
+              <ProductsList />
+            </PrivateRoute>
+          ),
+        },
+        {
+          path: "/product/:id",
+          element: <ProductPage />,
+        },
+      ],
     },
   ]);
 
@@ -63,13 +75,13 @@ function App() {
     <>
       <div>
         <ErrorBoundary fallback={<p>Oh no error!</p>}>
-          <RouterProvider router={router} />
-          {/* <ThemeProvider>
+          <ThemeProvider>
             <AuthProvider>
+              <RouterProvider router={router} />
               <AuthInfo />
             </AuthProvider>
             <ThemeSwitcher />
-          </ThemeProvider> */}
+          </ThemeProvider>
 
           {/* <AuthInfo /> */}
 
