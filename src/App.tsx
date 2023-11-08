@@ -32,6 +32,9 @@ import { PrivateRoute } from "./components/PrivateRoute";
 import { Layout } from "./components/Layout";
 import { ROUTE } from "./routes";
 import { CreateProductPage } from "./pages/CreateProductPage";
+import { Provider } from "react-redux";
+import { store } from "./store";
+import { Counter } from "./features/Counter/Counter";
 
 function App() {
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -89,33 +92,36 @@ function App() {
     <>
       <div>
         <ErrorBoundary fallback={<p>Oh no error!</p>}>
-          <HelmetProvider>
-            <ThemeProvider>
-              <AuthProvider>
-                <RouterProvider router={router} />
-                {/* <AuthInfo /> */}
-              </AuthProvider>
-              {/* <ThemeSwitcher /> */}
-            </ThemeProvider>
+          <Provider store={store}>
+            <HelmetProvider>
+              <ThemeProvider>
+                <AuthProvider>
+                  <Counter />
+                  <RouterProvider router={router} />
+                  {/* <AuthInfo /> */}
+                </AuthProvider>
+                {/* <ThemeSwitcher /> */}
+              </ThemeProvider>
 
-            {/* <AuthInfo /> */}
+              {/* <AuthInfo /> */}
 
-            {/* <RegistrationPage /> */}
+              {/* <RegistrationPage /> */}
 
-            {/* <MagicButton
+              {/* <MagicButton
           ref={buttonRef}
           label="Click me"
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         /> */}
 
-            {/* <RegistrationFormRefsCustomInput /> */}
-            {/* <RegistrationFormRefs /> */}
-            {/* <RegistrationFormState /> */}
-            {/* <Generator /> */}
-            {/* <Button label="Click me" type="submit" /> */}
-            {/* <Button label="Click me" bgColor="carrot" color="emerald" /> */}
-          </HelmetProvider>
+              {/* <RegistrationFormRefsCustomInput /> */}
+              {/* <RegistrationFormRefs /> */}
+              {/* <RegistrationFormState /> */}
+              {/* <Generator /> */}
+              {/* <Button label="Click me" type="submit" /> */}
+              {/* <Button label="Click me" bgColor="carrot" color="emerald" /> */}
+            </HelmetProvider>
+          </Provider>
         </ErrorBoundary>
       </div>
     </>
