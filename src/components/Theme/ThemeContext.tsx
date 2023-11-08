@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from "react";
 
-enum Theme {
+export enum Theme {
   LIGHT = "light",
   DARK = "dark",
 }
@@ -12,7 +12,7 @@ interface ThemeContextType {
 
 const ThemeContext = createContext<ThemeContextType | null>(null);
 
-const useTheme = () => {
+export const useTheme = () => {
   const [theme, setTheme] = useState<Theme>(Theme.DARK);
 
   const toggle = () => {

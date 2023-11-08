@@ -5,10 +5,12 @@ import { Button } from "./Button";
 describe("Button component", () => {
   // TODO: do not write tests like below
   it("should renders correctly", () => {
-    const { debug } = render(<Button label="Click me" />);
+    const { debug, rerender, unmount } = render(<Button label="Click me" />);
     const button = screen.getByText("Click me");
 
     fireEvent.click(button);
+
+    // rerender();
 
     // debug();
     expect(screen.getByText("Click me")).toBeInTheDocument();
