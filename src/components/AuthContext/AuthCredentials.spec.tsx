@@ -1,4 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { AuthCredentials } from "./AuthCredentials";
 import { AuthProvider } from "./AuthContext";
 
@@ -13,6 +14,7 @@ describe("AuthCredentials component", () => {
     expect(screen.getByText(/yes/i)).toBeInTheDocument();
 
     fireEvent.click(screen.getByRole("button"));
+    // await userEvent.click(screen.getByRole("button"));
 
     expect(screen.getByText(/no/i)).toBeInTheDocument();
   });
