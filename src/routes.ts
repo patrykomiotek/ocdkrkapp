@@ -4,7 +4,7 @@ export const ROUTE = {
     title: "Ocado Krk",
   },
   PRODUCTS: {
-    path: "/products",
+    path: "/",
     title: "Products",
   },
   CREATE_PRODUCT: {
