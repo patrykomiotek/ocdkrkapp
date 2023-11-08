@@ -12,8 +12,10 @@ export const Input = forwardRef(
   ({ label, ...rest }: Props, ref: Ref<HTMLInputElement>) => {
     const id = useId();
     return (
-      <div>
-        <label htmlFor={id}>{label}</label>
+      <div className="p-2">
+        <label htmlFor={id} className="mr-6 text-left">
+          {label}
+        </label>
         <input ref={ref} id={id} {...rest} />
       </div>
     );
