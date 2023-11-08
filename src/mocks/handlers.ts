@@ -1,19 +1,23 @@
 import { rest } from "msw";
 
-export const API_URL = "https://api.airtable.com/v0/appuBOY54XBVjs1x9";
+export const API_URL = "https://api.airtable.com/v0/app6DhxHEm83F85Z3";
 
 export const productsMockData = {
   records: [
     {
       id: "1234",
       fields: {
-        name: "Product1",
+        name: "Product 1",
+        description: "Lorem ipsum",
+        price: 10,
       },
     },
     {
       id: "456",
       fields: {
         name: "Product2",
+        description: "Lorem ipsum",
+        price: 10,
       },
     },
   ],
@@ -47,7 +51,7 @@ export const employeesMockData = {
 export const handlers = [
   rest.get(`${API_URL}/products`, (_req, res, ctx) => {
     return res(
-      ctx.delay(4000),
+      // ctx.delay(4000),
       ctx.status(200),
       ctx.json(productsMockData)
 
@@ -59,7 +63,7 @@ export const handlers = [
     );
   }),
 
-  rest.get(`${API_URL}/products/123`, (_req, res, ctx) => {
+  rest.get(`${API_URL}/products/1234`, (_req, res, ctx) => {
     return res(
       // ctx.delay(2000),
       ctx.status(200),
