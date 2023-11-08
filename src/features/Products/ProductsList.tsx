@@ -24,7 +24,7 @@ export const ProductsList = () => {
     <>
       <Helmet>Product list</Helmet>
       <div>
-        <h2>Products</h2>
+        <h1>Products</h1>
         <ul>
           {products.map((elem) => (
             <li key={elem.id}>

@@ -19,7 +19,7 @@ export const Product = ({ id }: Props) => {
 
   return (
     <div>
-      <h2>Products</h2>
+      <h1>Product</h1>
       <p>Name: {data.fields.name}</p>
       <p>Description: {data.fields.description}</p>
       <p>Price: ${data.fields.price}</p>

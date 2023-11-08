@@ -7,6 +7,10 @@ export const ROUTE = {
     path: "/products",
     title: "Products",
   },
+  CREATE_PRODUCT: {
+    path: "/products/create",
+    title: "Create product",
+  },
   PRODUCT: {
     path: "/products/:id",
     dynamicPath: (id: string) => `/products/${id}`,

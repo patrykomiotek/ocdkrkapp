@@ -14,6 +14,9 @@ export const Menu = () => {
         <li className="mr-3">
           <Link to="/contact">Contact</Link>
         </li>
+        <li className="mr-3">
+          <Link to={ROUTE.CREATE_PRODUCT.path}>Create Product</Link>
+        </li>
       </ul>
     </div>
   );

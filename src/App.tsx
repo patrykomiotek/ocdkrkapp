@@ -31,6 +31,7 @@ import { ProductPage } from "./pages/Product";
 import { PrivateRoute } from "./components/PrivateRoute";
 import { Layout } from "./components/Layout";
 import { ROUTE } from "./routes";
+import { CreateProductPage } from "./pages/CreateProductPage";
 
 function App() {
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -69,6 +70,10 @@ function App() {
         {
           path: ROUTE.PRODUCT.path,
           element: <ProductPage />,
+        },
+        {
+          path: ROUTE.CREATE_PRODUCT.path,
+          element: <CreateProductPage />,
         },
       ],
       // errorElement: <Page404 />,
