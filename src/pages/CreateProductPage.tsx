@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { ROUTE } from "../routes";
+import { CreateProductForm } from "../features/Products/CreateProductForm";
 
 export const CreateProductPage = () => {
   return (
@@ -9,6 +10,7 @@ export const CreateProductPage = () => {
       </Helmet>
       <div>
         <h1>Create product</h1>
+        <CreateProductForm />
       </div>
     </>
   );
