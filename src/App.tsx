@@ -1,4 +1,6 @@
 import { MouseEventHandler, useEffect, useRef, useState } from "react";
+import { HelmetProvider } from "react-helmet-async";
+
 import "./App.css";
 import { Generator } from "./components/Generator";
 import { RegistrationFormRefs } from "./components/RegistrationFormRefs/RegistrationFormRefs";
@@ -68,38 +70,46 @@ function App() {
           element: <ProductPage />,
         },
       ],
+      // errorElement: <Page404 />,
     },
+    // {
+    //   path: "/admin",
+    //   element: <AdminLayout />,
+    //   children: [],
+    // },
   ]);
 
   return (
     <>
       <div>
         <ErrorBoundary fallback={<p>Oh no error!</p>}>
-          <ThemeProvider>
-            <AuthProvider>
-              <RouterProvider router={router} />
-              <AuthInfo />
-            </AuthProvider>
-            <ThemeSwitcher />
-          </ThemeProvider>
+          <HelmetProvider>
+            <ThemeProvider>
+              <AuthProvider>
+                <RouterProvider router={router} />
+                <AuthInfo />
+              </AuthProvider>
+              <ThemeSwitcher />
+            </ThemeProvider>
 
-          {/* <AuthInfo /> */}
+            {/* <AuthInfo /> */}
 
-          {/* <RegistrationPage /> */}
+            {/* <RegistrationPage /> */}
 
-          {/* <MagicButton
+            {/* <MagicButton
           ref={buttonRef}
           label="Click me"
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         /> */}
 
-          {/* <RegistrationFormRefsCustomInput /> */}
-          {/* <RegistrationFormRefs /> */}
-          {/* <RegistrationFormState /> */}
-          {/* <Generator /> */}
-          {/* <Button label="Click me" type="submit" /> */}
-          {/* <Button label="Click me" bgColor="carrot" color="emerald" /> */}
+            {/* <RegistrationFormRefsCustomInput /> */}
+            {/* <RegistrationFormRefs /> */}
+            {/* <RegistrationFormState /> */}
+            {/* <Generator /> */}
+            {/* <Button label="Click me" type="submit" /> */}
+            {/* <Button label="Click me" bgColor="carrot" color="emerald" /> */}
+          </HelmetProvider>
         </ErrorBoundary>
       </div>
     </>

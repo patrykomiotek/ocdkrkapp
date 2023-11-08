@@ -20,7 +20,7 @@ const Menu = () => {
 
 const Footer = () => {
   return (
-    <div>
+    <div className="mb-8">
       <p>&copy; 2023 Ocado Krk</p>
     </div>
   );
